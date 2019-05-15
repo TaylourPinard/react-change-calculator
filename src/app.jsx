@@ -37,7 +37,7 @@ class App extends Component {
     changeDue = changeDue.toFixed(2);
     this.setState({ 
       change: changeDue,
-      alertMessage: `The total change due is $${changeDue}.`
+      alertMessage: `The total change due is $${changeDue}`
     });
     let changeGiven = [null,null,null,null,null,null,null,null];
     if(changeDue < 0) return;
@@ -77,11 +77,11 @@ class App extends Component {
                 <h5 className="card-title">Enter Information</h5>
                 <div className="form-group">
                   <label htmlFor="amountDue">How much is due?</label>
-                  <input name="amountDue" type="number" className="form-control" value={this.state.amountDue} onChange={this.handleInputChange} />
+                  <input name="amountDue" id="amountDue" type="number" className="form-control" value={this.state.amountDue} onChange={this.handleInputChange} />
                 </div>
                 <div className="form-group">
                   <label htmlFor="amountReceived">How much was received?</label>
-                  <input name="amountReceived" type="number" className="form-control" value={this.state.amountReceived || ''} onChange={this.handleInputChange} />
+                  <input name="amountReceived" id="amountRecieved" type="number" className="form-control" value={this.state.amountReceived || ''} onChange={this.handleInputChange} />
                 </div>
                 <button className="btn btn-primary btn-block" disabled={!this.state.amountDue || !this.state.amountReceived} onClick={() => this.calculate(this.state.amountDue, this.state.amountReceived)}>Calculate</button>
               </div>
